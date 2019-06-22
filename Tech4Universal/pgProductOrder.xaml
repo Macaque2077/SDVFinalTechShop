@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="Tech4Universal.pgProduct"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tech4Universal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBlock x:Name="tblProductTitle" HorizontalAlignment="Left" Margin="138,82,0,0" Text="ProductTitle" TextWrapping="Wrap" VerticalAlignment="Top" Height="58" Width="420" FontSize="36"/>
+        <TextBlock x:Name="tblOrderProduct" HorizontalAlignment="Left" Margin="60,42,0,0" Text="Product Order Page" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock x:Name="tblProductCode" HorizontalAlignment="Left" Margin="60,196,0,0" Text="Product Code" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Height="40" Width="210"/>
+        <TextBlock x:Name="tblBrand" HorizontalAlignment="Left" Margin="60,296,0,0" Text="Brand" TextWrapping="Wrap" VerticalAlignment="Top" Height="38" Width="135" FontSize="24"/>
+        <TextBlock x:Name="tblPrice" HorizontalAlignment="Left" Margin="60,396,0,0" Text="Price" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Height="40" Width="145"/>
+        <TextBlock x:Name="tblStock" HorizontalAlignment="Left" Margin="60,496,0,0" Text="Stock Available" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock x:Name="tblDescription" HorizontalAlignment="Left" Margin="60,780,0,0" Text="Description" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
+        <TextBox x:Name="tbDescription" HorizontalAlignment="Left" Margin="60,852,0,0" Text="Description" VerticalAlignment="Top" Height="176" Width="800" FontSize="24" IsReadOnly="True"/>
+        <TextBox x:Name="tbProductCode" HorizontalAlignment="Left" Margin="195,233,0,0" Text="ProductCode" VerticalAlignment="Top" Height="62" Width="340" FontSize="36" IsReadOnly="True"/>
+        <TextBox x:Name="tbBrand" HorizontalAlignment="Left" Margin="195,328,0,0" Text="Brand" VerticalAlignment="Top" FontSize="36" Width="340" IsReadOnly="True"/>
+        <TextBox x:Name="tbPrice" HorizontalAlignment="Left" Margin="195,412,0,0" Text="Price" VerticalAlignment="Top" FontSize="36" Width="340" IsReadOnly="True"/>
+        <TextBox x:Name="tbStock" HorizontalAlignment="Left" Margin="195,540,0,0" Text="Stock" VerticalAlignment="Top" FontSize="36" Width="340" IsReadOnly="True"/>
+        <ContentControl x:Name="ctcProdSpecs" Content="ContentControl" HorizontalAlignment="Left" Margin="60,626,0,0" VerticalAlignment="Top" Height="149" Width="800" FontSize="24"/>
+        <Button x:Name="btnOrder" Content="Order" HorizontalAlignment="Left" Margin="1710,747,0,0" VerticalAlignment="Top" Height="88" Width="163" FontSize="36" Click="BtnOrder_Click"/>
+        <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" Margin="1082,747,0,0" VerticalAlignment="Top" Height="88" Width="155" FontSize="36" Click="BtnClose_Click"/>
+        <TextBlock x:Name="tblOrderQuantity" HorizontalAlignment="Left" Margin="1685,196,0,0" Text="Quantity to Order" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
+        <TextBox x:Name="tbOrderQuantity" HorizontalAlignment="Left" Margin="1500,233,0,0" Text="1" VerticalAlignment="Top" Height="62" Width="373" FontSize="36" MaxLength="5"/>
+        <TextBlock x:Name="tblDelivery" HorizontalAlignment="Left" Margin="1274,328,0,0" Text="Enter Your Delivery Address Below" TextWrapping="Wrap" VerticalAlignment="Top" Height="70" Width="599" FontSize="36"/>
+        <TextBox x:Name="tbDeliveryAddress" HorizontalAlignment="Left" Margin="1082,412,0,0" Text="Street, Town, Post Code, Country" VerticalAlignment="Top" Height="314" Width="791" FontSize="36" AcceptsReturn="True" PlaceholderText="" MaxLength="255"/>
+        <TextBlock x:Name="tblNewOrUsed" HorizontalAlignment="Left" Margin="764,82,0,0" Text="NeworUsed" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36"/>
+        <TextBox x:Name="tbMessageShow" HorizontalAlignment="Left" Margin="942,852,0,0" Text="Messages" VerticalAlignment="Top" Height="176" Width="931" IsReadOnly="True"/>
+
+    </Grid>
+</Page>

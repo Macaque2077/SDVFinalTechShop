@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="MobDeviceUniversal.pgProductsList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MobDeviceUniversal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="689" Margin="150,247,0,0" VerticalAlignment="Top" Width="463">
+            <ListBoxItem Content="Apple Iphone10 New&#xD;&#xA;Apple Iphone7 New&#xD;&#xA;Apple iphone7 Used&#xD;&#xA;Samsung Galaxy S3 New&#xD;&#xA;Samsung Galaxy S3 Used&#xD;&#xA;" Height="689" FontSize="36" Margin="0,0,0,0"/>
+        </ListBox>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="150,150,0,0" Text="Products List" TextWrapping="Wrap" VerticalAlignment="Top" SelectionChanged="TextBlock_SelectionChanged" FontSize="48"/>
+        <Button x:Name="button" Content="Order" HorizontalAlignment="Left" Margin="686,247,0,0" VerticalAlignment="Top" Height="100" Width="207" FontSize="24"/>
+
+    </Grid>
+</Page>
