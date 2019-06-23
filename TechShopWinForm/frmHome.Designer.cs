@@ -33,7 +33,6 @@
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnOrders = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.lblTotValue = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstbxDeviceTypes
@@ -86,21 +85,11 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblTotValue
-            // 
-            this.lblTotValue.AutoSize = true;
-            this.lblTotValue.Location = new System.Drawing.Point(15, 409);
-            this.lblTotValue.Name = "lblTotValue";
-            this.lblTotValue.Size = new System.Drawing.Size(61, 13);
-            this.lblTotValue.TabIndex = 10;
-            this.lblTotValue.Text = "Total Value";
-            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(405, 450);
-            this.Controls.Add(this.lblTotValue);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnOrders);
             this.Controls.Add(this.btnOpen);
@@ -119,7 +108,6 @@
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button btnOrders;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Label lblTotValue;
         internal System.Windows.Forms.ListBox lstbxDeviceTypes;
     }
 }

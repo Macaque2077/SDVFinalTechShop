@@ -61,7 +61,7 @@ namespace TechShopWinForm
             string lcKey;
 
             lcKey = Convert.ToString(lstbxDeviceTypes.SelectedItem);
-            if (lcKey != null)
+            if (lcKey != null && string.IsNullOrEmpty(lcKey) == false)
                 try
                 {
                     frmDeviceType.Run(lstbxDeviceTypes.SelectedItem as string);
@@ -70,8 +70,12 @@ namespace TechShopWinForm
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Sorry no artist by this name");
+                    MessageBox.Show(ex.Message, "Sorry no device type by this name");
                 }
+            else
+            {
+                MessageBox.Show("Sorry no device type selected, please check connection to database");
+            }
         }
 
         //opens orders form
