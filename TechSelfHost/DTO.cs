@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TechSelfHost
 {
+    //variables for device type categories
     public class clsDeviceType
     {
         public string Name { get; set; }
@@ -13,7 +11,7 @@ namespace TechSelfHost
 
         public List<clsAllProducts> ProductsList { get; set; }
     }
-
+    //variables for products
     public class clsAllProducts
     {
         public string DeviceTypeName { get; set; }
@@ -47,6 +45,7 @@ namespace TechSelfHost
     //    public List<clsOrder> OrderList { get; set; }
     //}
 
+    //variables for orders
     public class clsOrder
     {
         public string OrderID { get; set; }

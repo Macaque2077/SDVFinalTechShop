@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TechShopWinForm
@@ -27,23 +22,6 @@ namespace TechShopWinForm
 
         }
 
-        //private async void btnOK_Click(object sender, EventArgs e)
-        //{
-        //    if (isValid())
-        //    {
-        //        //DialogResult = DialogResult.OK; Q10
-        //        pushData();
-        //        //Task3 6bxviii initiate inserting or updating artworks
-        //        //----------------------------------------------------------------------------------------------------------
-        //        if (tbProductName.Enabled)
-        //            MessageBox.Show(await ServiceClient.InsertProductAsync(_Products));
-        //        else
-        //            MessageBox.Show(await ServiceClient.UpdateProductAsync(_Products));
-
-
-        //        Close();
-        //    }
-        //}
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
@@ -88,11 +66,7 @@ namespace TechShopWinForm
             
         }
 
-        private void frmWork_Load(object sender, EventArgs e)
-        {
-
-        }
-        //Task3 6xii
+        //load a new or used product based on the char U or N
         public delegate void LoadWorkFormDelegate(clsAllProducts prProduct);
 
         public static Dictionary<char, Delegate> _ProductsForm = new Dictionary<char, Delegate>
@@ -101,50 +75,91 @@ namespace TechShopWinForm
             {'N', new LoadWorkFormDelegate(frmProductNew.Run)},
         };
 
+        //calls the load and sends the Char U or N
         public static void DispatchProductForm(clsAllProducts prProduct)
         {
             _ProductsForm[prProduct.NewOrUsed].DynamicInvoke(prProduct);
         }
 
+        //pushes the changes to the form to the database after performing checks
         private async void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (isValid())
+            
+            if (QuanityandPricePositive() == true && inputValid() == true)
             {
+                pushData();
                 //DialogResult = DialogResult.OK; Q10
-                if (inputValid() == true)
-                {
-                    pushData();
-                    //Task3 6bxviii initiate inserting or updating artworks
-                    //----------------------------------------------------------------------------------------------------------
-                    if (tbProductName.Enabled)
+                //if (inputValid() == true)
+                //{
+
+                //Task3 6bxviii initiate inserting or updating artworks
+                //----------------------------------------------------------------------------------------------------------
+                if (tbProductName.Enabled)
                         MessageBox.Show(await ServiceClient.InsertProductAsync(_Products));
                     else
                         MessageBox.Show(await ServiceClient.UpdateProductAsync(_Products));
 
 
                     Close();
-                }
-                else
-                {
-                    MessageBox.Show("Cannot enter whitespace or null for fields");
-                }
-
+            }
+            else
+            {
+                
             }
         }
+        //checks whether the text box values are valid returns a bool
         private bool inputValid()
         {
-            bool lcResult = false; 
+            int lcNullCount = 0;
+            bool lcValid = false;
 
             foreach (TextBox tb in this.Controls.OfType<TextBox>())
             {
-                if (string.IsNullOrEmpty(tb.Text) || string.IsNullOrWhiteSpace(tb.Text))
+                if (string.IsNullOrWhiteSpace(tb.Text)  || string.IsNullOrEmpty(tb.Text))
                 {
-                    lcResult = false;
+                    
+                    lcNullCount++;
+                    //NullCount is used as there was always one extra null text box, I am assuming because of the two inherited forms having their own extra textbox
+                    if (lcNullCount > 1)
+                    {
+                        lcValid = false;
+                        MessageBox.Show("Cannot enter whitespace or null for fields");
+                        break;
+                    }
+
                 }
-                else { lcResult = true; }
+                else
+                {
+                    lcValid = true;
+                }
             }
-            return lcResult;
+            return lcValid;
+            
         }
+        //checks whether positives have been entered for quantity and price
+        private bool QuanityandPricePositive()
+        {
+            try
+            {
+                if (int.Parse(tbStockQuantity.Text) > 0 && decimal.Parse(tbPricePI.Text) > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Quantity and price must be greater than 0");
+                    return false;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Quantity and price cannot be empty");
+                return false;
+            }
+
+
+        }
+
 
     }
 }

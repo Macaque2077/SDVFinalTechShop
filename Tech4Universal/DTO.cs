@@ -1,9 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Tech4Universal
 {
@@ -34,7 +32,7 @@ namespace Tech4Universal
         public override string ToString()
         {
             return ProductCode;
-            //return DeviceTypeName + "\t" + ProductName + "\t" + DateTimeLastModified.ToString("d");
+        
 
         }
 
@@ -44,11 +42,6 @@ namespace Tech4Universal
         }
     }
 
-    //[JsonArrayAttribute]
-    //public class clsOrderList
-    //{
-    //    public List<clsOrder> OrderList { get; set; }
-    //}
     public class clsOrder
     {
         

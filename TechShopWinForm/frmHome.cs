@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TechShopWinForm
@@ -21,14 +14,11 @@ namespace TechShopWinForm
             InitializeComponent();
         }
 
-        //private frmOrders MobileDevices;
-        //private frmListProducts Products;
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
             updateDisplay();
         }
+        //loads device type names from DB and populates listbox
         public async void updateDisplay()
         {
             try
@@ -38,32 +28,8 @@ namespace TechShopWinForm
             }
             catch { }
         }
-            private void btnEdit_Click(object sender, EventArgs e)
-        {
-            
-            //MobileDevices = new frmOrders();
-            //MobileDevices.Show();
-        }
 
-        private void lblBrands_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                frmDeviceType.Run(null);
-                
-
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("Duplicate Key!");
-            }
-        }
+        //opens the product list for the selected device type
         private void lstbxDeviceTypes_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             string lcKey;
@@ -83,12 +49,13 @@ namespace TechShopWinForm
 
         }
 
-
+        //closes form
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        //also opens product list form, could not assign both clicks to same function
         private void btnOpen_Click(object sender, EventArgs e)
         {
             string lcKey;
@@ -107,6 +74,7 @@ namespace TechShopWinForm
                 }
         }
 
+        //opens orders form
         private void btnOrders_Click(object sender, EventArgs e)
         {
             try

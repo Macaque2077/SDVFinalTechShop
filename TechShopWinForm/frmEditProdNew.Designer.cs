@@ -87,7 +87,6 @@
             this.Controls.Add(this.tbConditionDesc);
             this.Name = "frmProductNew";
             this.Text = "New Product Form";
-            this.Load += new System.EventHandler(this.frmProductNew_Load);
             this.Controls.SetChildIndex(this.tbConditionDesc, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.tbWarranty, 0);

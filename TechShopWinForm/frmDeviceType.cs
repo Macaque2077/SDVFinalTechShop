@@ -4,12 +4,16 @@ using System.Windows.Forms;
 
 namespace TechShopWinForm
 {
-    public partial class frmDeviceType : Form
+    public sealed partial class frmDeviceType : Form
     {
+        public static frmDeviceType Instance { get { return frmDeviceType.instance; } } // this is the public property
+
+        private static readonly frmDeviceType instance = new frmDeviceType();
+
         private static Dictionary<string, frmDeviceType> _DeviceTypeFormList = new Dictionary<string, frmDeviceType>();
 
         private clsDeviceType _DeviceType;
-        //private frmEditProd EditProd;
+
         private frmDeviceType()
         {
            InitializeComponent();
@@ -41,10 +45,8 @@ namespace TechShopWinForm
         {
             SetDetails(await ServiceClient.GetDeviceTypeAsync(prDeviceType));
 
-            //throw new NotImplementedException();
+            
         }
-
-        //Task3 5b vii needed for setDetails
         
 
         private void SetDetails(clsDeviceType prDeviceType)
@@ -55,7 +57,7 @@ namespace TechShopWinForm
             Show();
             frmHome.Instance.updateDisplay();
             txtName.Enabled = string.IsNullOrEmpty(_DeviceType.Name);
-            //throw new NotImplementedException();
+            
         }
 
         private void updateForm()
@@ -68,8 +70,7 @@ namespace TechShopWinForm
         private void button2_Click(object sender, EventArgs e)
         {
             frmProduct.DispatchProductForm(lstProducts.SelectedValue as clsAllProducts);
-            //EditProd = new frmEditProd();
-            //EditProd.Show();
+
         }
         private void UpdateDisplay()
         {
@@ -77,23 +78,19 @@ namespace TechShopWinForm
             if (_DeviceType.ProductsList != null)
                 lstProducts.DataSource = _DeviceType.ProductsList;
         }
-        public virtual Boolean isValid()
-        {
-            return true;
-        }
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
                 string lcReply = new InputBox(clsAllProducts.FACTORY_PROMPT).Answer;
-                if (!string.IsNullOrEmpty(lcReply)) // not cancelled?
+                if (!string.IsNullOrEmpty(lcReply)) 
                 {
                     clsAllProducts lcProduct = clsAllProducts.NewProduct(lcReply[0]);
-                    if (lcProduct != null) // valid artwork created?
+                    if (lcProduct != null) 
                     { 
 
-                        if (txtName.Enabled)       // new artist not saved?
+                        if (txtName.Enabled)       
                         {
                             pushData();
                             await ServiceClient.InsertProductAsync(_DeviceType);
@@ -101,7 +98,7 @@ namespace TechShopWinForm
                         }
                         lcProduct.DeviceTypeName = _DeviceType.Name;
                         frmProduct.DispatchProductForm(lcProduct);
-                        if (!string.IsNullOrEmpty(lcProduct.ProductName)) // not cancelled?
+                        if (!string.IsNullOrEmpty(lcProduct.ProductName)) 
                         {
                             refreshFormFromDB(_DeviceType.Name);
                             frmHome.Instance.updateDisplay();
@@ -147,27 +144,6 @@ namespace TechShopWinForm
             _DeviceType.Name = txtName.Text;
 
         }
-
-        private void frmListProducts_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lstDeviceTypes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
 
         private void lstProducts_DoubleClick(object sender, MouseEventArgs e)

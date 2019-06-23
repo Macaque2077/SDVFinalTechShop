@@ -28,89 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblOrderInfo = new System.Windows.Forms.Label();
+            this.lblProductCode = new System.Windows.Forms.Label();
+            this.lblProdName = new System.Windows.Forms.Label();
+            this.lblPriceatPurchase = new System.Windows.Forms.Label();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.lblTimeofOrder = new System.Windows.Forms.Label();
+            this.lblCustDetails = new System.Windows.Forms.Label();
             this.tbProductCode = new System.Windows.Forms.TextBox();
             this.tbProductName = new System.Windows.Forms.TextBox();
             this.tbPriceAtTimeOfOrder = new System.Windows.Forms.TextBox();
             this.tbQuantity = new System.Windows.Forms.TextBox();
             this.tbTimeOfOrder = new System.Windows.Forms.TextBox();
             this.tbCustomerDetails = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblOrderID = new System.Windows.Forms.Label();
             this.tbOrderID = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lblOrderInfo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.label1.Location = new System.Drawing.Point(13, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Order information";
+            this.lblOrderInfo.AutoSize = true;
+            this.lblOrderInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.lblOrderInfo.Location = new System.Drawing.Point(13, 26);
+            this.lblOrderInfo.Name = "lblOrderInfo";
+            this.lblOrderInfo.Size = new System.Drawing.Size(181, 26);
+            this.lblOrderInfo.TabIndex = 0;
+            this.lblOrderInfo.Text = "Order information";
             // 
-            // label3
+            // lblProductCode
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 105);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Product Code";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lblProductCode.AutoSize = true;
+            this.lblProductCode.Location = new System.Drawing.Point(27, 105);
+            this.lblProductCode.Name = "lblProductCode";
+            this.lblProductCode.Size = new System.Drawing.Size(72, 13);
+            this.lblProductCode.TabIndex = 2;
+            this.lblProductCode.Text = "Product Code";
             // 
-            // label4
+            // lblProdName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 140);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Product Name";
+            this.lblProdName.AutoSize = true;
+            this.lblProdName.Location = new System.Drawing.Point(27, 140);
+            this.lblProdName.Name = "lblProdName";
+            this.lblProdName.Size = new System.Drawing.Size(75, 13);
+            this.lblProdName.TabIndex = 3;
+            this.lblProdName.Text = "Product Name";
             // 
-            // label5
+            // lblPriceatPurchase
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 166);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Price at Purchase";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.lblPriceatPurchase.AutoSize = true;
+            this.lblPriceatPurchase.Location = new System.Drawing.Point(27, 166);
+            this.lblPriceatPurchase.Name = "lblPriceatPurchase";
+            this.lblPriceatPurchase.Size = new System.Drawing.Size(91, 13);
+            this.lblPriceatPurchase.TabIndex = 4;
+            this.lblPriceatPurchase.Text = "Price at Purchase";
             // 
-            // label6
+            // lblQuantity
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 196);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Quantity";
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Location = new System.Drawing.Point(27, 196);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(46, 13);
+            this.lblQuantity.TabIndex = 5;
+            this.lblQuantity.Text = "Quantity";
             // 
-            // label7
+            // lblTimeofOrder
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 224);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Time of Order";
+            this.lblTimeofOrder.AutoSize = true;
+            this.lblTimeofOrder.Location = new System.Drawing.Point(27, 224);
+            this.lblTimeofOrder.Name = "lblTimeofOrder";
+            this.lblTimeofOrder.Size = new System.Drawing.Size(71, 13);
+            this.lblTimeofOrder.TabIndex = 6;
+            this.lblTimeofOrder.Text = "Time of Order";
             // 
-            // label8
+            // lblCustDetails
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 256);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Customer Details";
+            this.lblCustDetails.AutoSize = true;
+            this.lblCustDetails.Location = new System.Drawing.Point(27, 256);
+            this.lblCustDetails.Name = "lblCustDetails";
+            this.lblCustDetails.Size = new System.Drawing.Size(86, 13);
+            this.lblCustDetails.TabIndex = 7;
+            this.lblCustDetails.Text = "Customer Details";
             // 
             // tbProductCode
             // 
@@ -161,14 +159,14 @@
             this.tbCustomerDetails.Size = new System.Drawing.Size(295, 160);
             this.tbCustomerDetails.TabIndex = 13;
             // 
-            // label2
+            // lblOrderID
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "OrderID";
+            this.lblOrderID.AutoSize = true;
+            this.lblOrderID.Location = new System.Drawing.Point(30, 68);
+            this.lblOrderID.Name = "lblOrderID";
+            this.lblOrderID.Size = new System.Drawing.Size(44, 13);
+            this.lblOrderID.TabIndex = 14;
+            this.lblOrderID.Text = "OrderID";
             // 
             // tbOrderID
             // 
@@ -195,20 +193,20 @@
             this.ClientSize = new System.Drawing.Size(469, 456);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tbOrderID);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblOrderID);
             this.Controls.Add(this.tbCustomerDetails);
             this.Controls.Add(this.tbTimeOfOrder);
             this.Controls.Add(this.tbQuantity);
             this.Controls.Add(this.tbPriceAtTimeOfOrder);
             this.Controls.Add(this.tbProductName);
             this.Controls.Add(this.tbProductCode);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblCustDetails);
+            this.Controls.Add(this.lblTimeofOrder);
+            this.Controls.Add(this.lblQuantity);
+            this.Controls.Add(this.lblPriceatPurchase);
+            this.Controls.Add(this.lblProdName);
+            this.Controls.Add(this.lblProductCode);
+            this.Controls.Add(this.lblOrderInfo);
             this.Name = "frmOrdersView";
             this.Text = "OrdersView";
             this.ResumeLayout(false);
@@ -218,20 +216,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblOrderInfo;
+        private System.Windows.Forms.Label lblProductCode;
+        private System.Windows.Forms.Label lblProdName;
+        private System.Windows.Forms.Label lblPriceatPurchase;
+        private System.Windows.Forms.Label lblQuantity;
+        private System.Windows.Forms.Label lblTimeofOrder;
+        private System.Windows.Forms.Label lblCustDetails;
         private System.Windows.Forms.TextBox tbProductCode;
         private System.Windows.Forms.TextBox tbProductName;
         private System.Windows.Forms.TextBox tbPriceAtTimeOfOrder;
         private System.Windows.Forms.TextBox tbQuantity;
         private System.Windows.Forms.TextBox tbTimeOfOrder;
         private System.Windows.Forms.TextBox tbCustomerDetails;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblOrderID;
         private System.Windows.Forms.TextBox tbOrderID;
         private System.Windows.Forms.Button btnClose;
     }

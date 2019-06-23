@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblDeviceType = new System.Windows.Forms.Label();
+            this.lblProducts = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -36,18 +36,18 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lstProducts = new System.Windows.Forms.ListBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblDeviceTypeName = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblDeviceType
+            // lblProducts
             // 
-            this.lblDeviceType.AutoSize = true;
-            this.lblDeviceType.Location = new System.Drawing.Point(25, 72);
-            this.lblDeviceType.Name = "lblDeviceType";
-            this.lblDeviceType.Size = new System.Drawing.Size(117, 13);
-            this.lblDeviceType.TabIndex = 1;
-            this.lblDeviceType.Text = "Products and Condition";
+            this.lblProducts.AutoSize = true;
+            this.lblProducts.Location = new System.Drawing.Point(25, 72);
+            this.lblProducts.Name = "lblProducts";
+            this.lblProducts.Size = new System.Drawing.Size(117, 13);
+            this.lblProducts.TabIndex = 1;
+            this.lblProducts.Text = "Products and Condition";
             // 
             // btnAdd
             // 
@@ -114,33 +114,31 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(208, 20);
             this.txtName.TabIndex = 9;
-            this.txtName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // label1
+            // lblDeviceTypeName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Device Tye Name";
+            this.lblDeviceTypeName.AutoSize = true;
+            this.lblDeviceTypeName.Location = new System.Drawing.Point(25, 21);
+            this.lblDeviceTypeName.Name = "lblDeviceTypeName";
+            this.lblDeviceTypeName.Size = new System.Drawing.Size(99, 13);
+            this.lblDeviceTypeName.TabIndex = 10;
+            this.lblDeviceTypeName.Text = "Device Type Name";
             // 
             // frmDeviceType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 450);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblDeviceTypeName);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lstProducts);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnQuit);
-            this.Controls.Add(this.lblDeviceType);
+            this.Controls.Add(this.lblProducts);
             this.Name = "frmDeviceType";
             this.Text = "Product List";
-            this.Load += new System.EventHandler(this.frmListProducts_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -148,14 +146,14 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblDeviceType;
+        private System.Windows.Forms.Label lblProducts;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDeviceTypeName;
         internal System.Windows.Forms.ListBox lstProducts;
     }
 }

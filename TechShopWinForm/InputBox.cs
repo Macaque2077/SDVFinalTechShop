@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TechShopWinForm
@@ -16,6 +9,7 @@ namespace TechShopWinForm
 
         public string Answer { get => _Answer; }
 
+        //populates the form
         public InputBox(string question)
         {
             InitializeComponent();
@@ -24,8 +18,14 @@ namespace TechShopWinForm
             txtAnswer.Focus();
             ShowDialog();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        //closes the form
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
+        }
+        //checks whether the user has enter a single character
+        private void btnOK_Click(object sender, EventArgs e)
         {
             if (txtAnswer.Text.Length > 0 && txtAnswer.Text.Length < 2)
             {
@@ -37,12 +37,6 @@ namespace TechShopWinForm
             {
                 lblError.Text = "Please enter one character into the text box.";
             }
-        }
-
-        private void btnCancel_Click_1(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
         }
     }
 }

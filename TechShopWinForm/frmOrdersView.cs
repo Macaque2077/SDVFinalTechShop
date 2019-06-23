@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TechShopWinForm
@@ -20,23 +13,21 @@ namespace TechShopWinForm
         {
             InitializeComponent();
         }
-
+        //calls to set the details for the form
         public static void Run(clsOrder prOrder)
         {
             Instance.setDetails(prOrder);
         }
 
+        //creates the new form 
         internal static void DispatchOrderForm(clsOrder prOrder)
         {
             frmOrdersView lcOrdersViewForm;
             lcOrdersViewForm = new frmOrdersView();
             frmOrdersView.Run(prOrder);
-            //lcOrdersViewForm.refreshFormFromDB(prOrder);
-            
-            //lcOrdersViewForm.Show();
-            //lcOrdersViewForm.Activate();
         }
 
+        //sets the details for the form
         private void setDetails(clsOrder prOrder)
         {
             _Orders = prOrder;
@@ -44,14 +35,9 @@ namespace TechShopWinForm
             ShowDialog();
         }
 
-        //private async void refreshFormFromDB(clsOrder prOrder)
-        //{
-        //    SetDetails(await ServiceClient.GetOrderDetailsAsync(prOrder));
-        //}
-
+        //Updates the text boxes on the form
         protected virtual void updateForm()
         {
-            //tbProductName.Enabled = string.IsNullOrEmpty(_Orders.ProductName);
             tbOrderID.Text = _Orders.OrderID;
             tbProductName.Text = _Orders.ProductName;
             tbProductCode.Text = _Orders.ProductCode;
@@ -61,26 +47,10 @@ namespace TechShopWinForm
             tbCustomerDetails.Text = _Orders.CustomerDetails;
         }
 
-
+        //closes the form
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,15 +21,11 @@ namespace Tech4Universal
                 return JsonConvert.DeserializeObject<clsDeviceType>
             (await lcHttpClient.GetStringAsync
         ("http://localhost:60064/api/tech/GetDeviceType?Name=" + prDeviceType));
-            //throw new NotImplementedException();
         }
 
         internal async static Task<string> InsertDeviceTypeAsync(clsDeviceType prdeviceType)
         {
             return await InsertOrUpdateAsync(prdeviceType, "http://localhost:60064/api/tech/PostDeviceType", "Post");
-
-
-            //throw new NotImplementedException();
         }
 
 
@@ -58,11 +52,10 @@ namespace Tech4Universal
         //--------------------------------------------------------------------------------------------------------------------
         //----------------------------------------Get, Insert & Update Order--------------------------------------------------
         //adapted from GetDeviceTypeAsync---------
-//        internal async static Task<clsOrderList> GetOrdersAsync()
+
         internal async static Task<List<clsOrder>> GetOrdersAsync()
         {
             using (HttpClient lcHttpClient = new HttpClient())
-//                return JsonConvert.DeserializeObject<clsOrderList>
                 return JsonConvert.DeserializeObject<List<clsOrder>>
             (await lcHttpClient.GetStringAsync
         ("http://localhost:60064/api/tech/getOrders/"));
@@ -87,24 +80,12 @@ namespace Tech4Universal
             }
         }
 
-        //internal static Task<clsOrder> GetOrderDetailsAsync(clsOrder prOrder)
-        //{
-        //    using (HttpClient lcHttpClient = new HttpClient())
-        //        return JsonConvert.DeserializeObject<clsDeviceType>
-        //    (await lcHttpClient.GetStringAsync
-        //("http://localhost:60064/api/tech/GetDeviceType?Name=" + prOrder));
-        //}
-
-
-
         //----------------------------------------------------------------------------------------------------------------
         //-------------------------------------Update Device Type---------------------------------------------------------
         internal async static Task<string> UpdateDeviceTypeAsync(clsDeviceType prdeviceType)
         {
             return await InsertOrUpdateAsync(prdeviceType, "http://localhost:60064/api/tech/PutDeviceType", "PUT");
 
-
-            //throw new NotImplementedException();
         }
 
         //changed Encodign.Default to Encoding.UTF8 as original had error

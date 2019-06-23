@@ -39,7 +39,7 @@
             this.tbStockQuantity = new System.Windows.Forms.TextBox();
             this.tbDescription = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblBrand = new System.Windows.Forms.Label();
             this.tbProductCode = new System.Windows.Forms.TextBox();
             this.tbLastModified = new System.Windows.Forms.TextBox();
             this.lblLastModified = new System.Windows.Forms.Label();
@@ -92,28 +92,28 @@
             // 
             // tbBrand
             // 
-            this.tbBrand.Location = new System.Drawing.Point(88, 38);
+            this.tbBrand.Location = new System.Drawing.Point(88, 37);
             this.tbBrand.Name = "tbBrand";
             this.tbBrand.Size = new System.Drawing.Size(100, 20);
             this.tbBrand.TabIndex = 6;
             // 
             // tbProductName
             // 
-            this.tbProductName.Location = new System.Drawing.Point(88, 66);
+            this.tbProductName.Location = new System.Drawing.Point(88, 63);
             this.tbProductName.Name = "tbProductName";
             this.tbProductName.Size = new System.Drawing.Size(100, 20);
             this.tbProductName.TabIndex = 7;
             // 
             // tbPricePI
             // 
-            this.tbPricePI.Location = new System.Drawing.Point(88, 92);
+            this.tbPricePI.Location = new System.Drawing.Point(88, 89);
             this.tbPricePI.Name = "tbPricePI";
             this.tbPricePI.Size = new System.Drawing.Size(100, 20);
             this.tbPricePI.TabIndex = 8;
             // 
             // tbStockQuantity
             // 
-            this.tbStockQuantity.Location = new System.Drawing.Point(88, 118);
+            this.tbStockQuantity.Location = new System.Drawing.Point(88, 115);
             this.tbStockQuantity.Name = "tbStockQuantity";
             this.tbStockQuantity.Size = new System.Drawing.Size(100, 20);
             this.tbStockQuantity.TabIndex = 9;
@@ -128,7 +128,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(227, 38);
+            this.btnSubmit.Location = new System.Drawing.Point(231, 15);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 12;
@@ -136,25 +136,25 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // label2
+            // lblBrand
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Brand";
+            this.lblBrand.AutoSize = true;
+            this.lblBrand.Location = new System.Drawing.Point(13, 41);
+            this.lblBrand.Name = "lblBrand";
+            this.lblBrand.Size = new System.Drawing.Size(35, 13);
+            this.lblBrand.TabIndex = 15;
+            this.lblBrand.Text = "Brand";
             // 
             // tbProductCode
             // 
-            this.tbProductCode.Location = new System.Drawing.Point(88, 12);
+            this.tbProductCode.Location = new System.Drawing.Point(88, 8);
             this.tbProductCode.Name = "tbProductCode";
             this.tbProductCode.Size = new System.Drawing.Size(100, 20);
             this.tbProductCode.TabIndex = 16;
             // 
             // tbLastModified
             // 
-            this.tbLastModified.Location = new System.Drawing.Point(88, 193);
+            this.tbLastModified.Location = new System.Drawing.Point(88, 196);
             this.tbLastModified.Name = "tbLastModified";
             this.tbLastModified.ReadOnly = true;
             this.tbLastModified.Size = new System.Drawing.Size(100, 20);
@@ -177,7 +177,7 @@
             this.Controls.Add(this.lblLastModified);
             this.Controls.Add(this.tbLastModified);
             this.Controls.Add(this.tbProductCode);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblBrand);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.tbDescription);
             this.Controls.Add(this.tbStockQuantity);
@@ -209,7 +209,7 @@
         private System.Windows.Forms.TextBox tbStockQuantity;
         private System.Windows.Forms.TextBox tbDescription;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblBrand;
         private System.Windows.Forms.TextBox tbProductCode;
         private System.Windows.Forms.TextBox tbLastModified;
         private System.Windows.Forms.Label lblLastModified;

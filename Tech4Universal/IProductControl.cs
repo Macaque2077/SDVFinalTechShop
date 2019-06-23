@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tech4Universal
 {
+    //handles differeing between new and used products
     interface IProductControl
     {
         void PushData(clsAllProducts prProduct);

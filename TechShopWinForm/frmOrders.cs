@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TechShopWinForm
 {
-    public partial class frmOrders : Form
+    public sealed partial class frmOrders : Form
     {
+        public static frmOrders Instance { get { return frmOrders.instance; } } // this is the public property
+
+        private static readonly frmOrders instance = new frmOrders();
+
         private static Dictionary<string, frmOrders> _OrdersFormList = new Dictionary<string, frmOrders>();
 
        // private clsOrderList _Orders;
@@ -23,27 +21,10 @@ namespace TechShopWinForm
             InitializeComponent();
         }
 
+        //populates orders screen and calles the function to refresh the form from the DB
         public static void Run()
         {
 
-            //frmOrders lcOrdersForm;
-            //if (string.IsNullOrEmpty(prOrder) ||
-            //!_OrdersFormList.TryGetValue(prOrder, out lcOrdersForm))
-            //{
-            //    lcOrdersForm = new frmOrders();
-            //    if (string.IsNullOrEmpty(prOrder))
-            //        lcOrdersForm.SetDetails(new clsOrderList());
-            //    else
-            //    {
-            //        _OrdersFormList.Add(prOrder, lcOrdersForm);
-            //        lcOrdersForm.refreshFormFromDB(prOrder);
-            //    }
-            //}
-            //else
-            //{
-            //    lcOrdersForm.Show();
-            //    lcOrdersForm.Activate();
-            //}
             frmOrders lcOrdersForm;
             lcOrdersForm = new frmOrders();
             lcOrdersForm.refreshFormFromDB();
@@ -58,24 +39,17 @@ namespace TechShopWinForm
         {
             SetDetails(await ServiceClient.GetOrdersAsync());
         }
-
-//        private void SetDetails(clsOrderList prOrder)
+        //displays the form
         private void SetDetails(List<clsOrder> prOrder)
         {
             _Orders = prOrder;
-            //updateForm();
             UpdateDisplay();
             Show();
             frmHome.Instance.updateDisplay();
-            //txtName.Enabled = string.IsNullOrEmpty(_DeviceType.Name);
+
         }
 
-        //private void UpdateDisplay()
-        //{
-        //    lstOrders.DataSource = null;
-        //    if (_Orders.OrderList != null)
-        //        lstOrders.DataSource = _Orders.OrderList;
-        //}
+        //updates the display
         private void UpdateDisplay()
         {
             lstOrders.DataSource = null;
@@ -86,6 +60,7 @@ namespace TechShopWinForm
 
         }
 
+        //calculates total for orders
         private string OrderTotal()
         {
             decimal TotalValue = 0;
@@ -100,26 +75,16 @@ namespace TechShopWinForm
              return("Total order value =" + TotalValue.ToString());
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //Opens the order viewer
         private void btnEdit_Click(object sender, EventArgs e)
         {
             frmOrdersView.DispatchOrderForm(lstOrders.SelectedValue as clsOrder);
             UpdateDisplay();
         }
 
-        private void frmMobileDevices_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        //deletes the order
         private async void btnDelete_Click(object sender, EventArgs e)
         {
-
-
             int lcIndex = lstOrders.SelectedIndex;
 
             if (lcIndex >= 0 && MessageBox.Show("Are you sure?", "Deleting Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -131,7 +96,7 @@ namespace TechShopWinForm
                 frmHome.Instance.updateDisplay();
             }
         }
-
+        //hides the form
         private void btnClose_Click(object sender, EventArgs e)
         {
             Hide();

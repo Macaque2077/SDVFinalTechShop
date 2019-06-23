@@ -1,9 +1,6 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace TechShopWinForm
 {
@@ -31,26 +28,22 @@ namespace TechShopWinForm
 
         public static readonly string FACTORY_PROMPT = "Enter N for New Product or U for Used Product";
 
+        //Output for the product list listbox 
         public override string ToString()
         {
-            return DeviceTypeName +"\t" + ProductName + "\t" + DateTimeLastModified.ToShortDateString();
-
+            return Brand +"\t" + ProductName + "\t" + DateTimeLastModified.ToShortDateString();
         }
 
+        //Cretes new product
         public static clsAllProducts NewProduct(char prChoice)
         {
             return new clsAllProducts() { NewOrUsed = Char.ToUpper(prChoice) };
         }
     }
 
-    //[JsonArrayAttribute]
-    //public class clsOrderList
-    //{
-    //    public List<clsOrder> OrderList { get; set; }
-    //}
+
     public class clsOrder
     {
-        
         public string OrderID { get; set; }
         public string ProductCode { get; set; }
         public string ProductName { get; set; }
@@ -60,14 +53,16 @@ namespace TechShopWinForm
         public string CustomerDetails { get; set; }
         public string DeviceTypeName { get; set; }
 
+        //outputs order details to the screen
         public override string ToString()
         {
             return DeviceTypeName + "\t" + ProductName + "\t" + Quantity;
 
         }
-
+        //can be used to calculate order total
         public decimal TotalPrice => (Quantity * PriceAtTimeOfOrder);
 
+        //creates new order
         public static clsOrder NewOrder()
         {
             return new clsOrder();

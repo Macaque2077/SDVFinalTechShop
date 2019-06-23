@@ -32,7 +32,6 @@
             this.lblDeviceTypes = new System.Windows.Forms.Label();
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnOrders = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTotValue = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -56,7 +55,6 @@
             this.lblDeviceTypes.Size = new System.Drawing.Size(90, 13);
             this.lblDeviceTypes.TabIndex = 1;
             this.lblDeviceTypes.Text = "Types of Devices";
-            this.lblDeviceTypes.Click += new System.EventHandler(this.lblBrands_Click);
             // 
             // btnOpen
             // 
@@ -77,16 +75,6 @@
             this.btnOrders.Text = "Orders";
             this.btnOrders.UseVisualStyleBackColor = true;
             this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(286, 127);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(107, 57);
-            this.btnAdd.TabIndex = 8;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnClose
             // 
@@ -114,7 +102,6 @@
             this.ClientSize = new System.Drawing.Size(405, 450);
             this.Controls.Add(this.lblTotValue);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnOrders);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.lblDeviceTypes);
@@ -131,7 +118,6 @@
         private System.Windows.Forms.Label lblDeviceTypes;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button btnOrders;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblTotValue;
         internal System.Windows.Forms.ListBox lstbxDeviceTypes;

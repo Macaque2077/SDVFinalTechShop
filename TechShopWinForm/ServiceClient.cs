@@ -1,7 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,11 +48,10 @@ namespace TechShopWinForm
         //--------------------------------------------------------------------------------------------------------------------
         //----------------------------------------Get, Insert & Update Order--------------------------------------------------
         //adapted from GetDeviceTypeAsync---------
-//        internal async static Task<clsOrderList> GetOrdersAsync()
+
         internal async static Task<List<clsOrder>> GetOrdersAsync()
         {
             using (HttpClient lcHttpClient = new HttpClient())
-//                return JsonConvert.DeserializeObject<clsOrderList>
                 return JsonConvert.DeserializeObject<List<clsOrder>>
             (await lcHttpClient.GetStringAsync
         ("http://localhost:60064/api/tech/getOrders/"));
@@ -78,14 +75,6 @@ namespace TechShopWinForm
                 return await lcRespMessage.Content.ReadAsStringAsync();
             }
         }
-
-        //internal static Task<clsOrder> GetOrderDetailsAsync(clsOrder prOrder)
-        //{
-        //    using (HttpClient lcHttpClient = new HttpClient())
-        //        return JsonConvert.DeserializeObject<clsDeviceType>
-        //    (await lcHttpClient.GetStringAsync
-        //("http://localhost:60064/api/tech/GetDeviceType?Name=" + prOrder));
-        //}
 
 
 

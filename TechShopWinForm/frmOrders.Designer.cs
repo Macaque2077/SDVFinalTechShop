@@ -107,7 +107,6 @@
             this.Controls.Add(this.lblOrders);
             this.Name = "frmOrders";
             this.Text = "frmMobileDevices";
-            this.Load += new System.EventHandler(this.frmMobileDevices_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

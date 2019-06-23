@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -18,7 +8,7 @@ using Windows.UI.Xaml.Navigation;
 namespace Tech4Universal
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// Page that displays the list of product for the device type
     /// </summary>
     public sealed partial class ProductList : Page
     {
@@ -50,7 +40,7 @@ namespace Tech4Universal
             }
 
         }
-
+        //retrieves and addes the product list to _DeviceType
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             try
@@ -71,14 +61,14 @@ namespace Tech4Universal
             }
 
         }
-
+        //Navigates to the product order page
         private void LstbxProductList_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             if (lstbxProductList.SelectedItem != null)
                 Frame.Navigate(typeof(pgProduct), lstbxProductList.SelectedItem);
 
         }
-
+        //goes to the Home page
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             Frame.GoBack();

@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace TechSelfHost
 {
@@ -36,6 +34,7 @@ namespace TechSelfHost
                 return null;
         }
 
+        //Gets all products in the device type
         private List<clsAllProducts> getProducts(string Name)
         {
             Dictionary<string, object> par = new Dictionary<string, object>(1);
@@ -48,6 +47,7 @@ namespace TechSelfHost
 
         }
 
+        //gets a single product
         public clsAllProducts getSingleProduct(string ProductCode)
         {
             Dictionary<string, object> par = new Dictionary<string, object>(1);
@@ -56,19 +56,10 @@ namespace TechSelfHost
             clsAllProducts lcProducts = new clsAllProducts();
             foreach (DataRow dr in lcResult.Rows)
                 lcProducts = dataRow2AllProducts(dr);
-            //lcProducts = lcResult.PrimaryKey;
+       
             return lcProducts;
 
-            //if (lcResult.Rows.Count > 0)
-            //    return new clsAllProducts()
-            //    {
 
-            //        //DeviceTypeName = (string)lcResult.Rows[0]["DeviceType"],
-            //        //Brand = (string)lcResult.Rows[0]["Description"],
-            //        //ProductsList = getProducts(Name)
-            //    };
-            //else
-            //    return null;
 
         }
 

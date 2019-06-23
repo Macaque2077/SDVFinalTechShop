@@ -1,24 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Tech4Universal
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// The Order page, here customers can order a product
     /// </summary>
     public sealed partial class pgProduct : Page
     {
@@ -30,29 +19,11 @@ namespace Tech4Universal
         public pgProduct()
         {
             this.InitializeComponent();
-           
-
-        //    _ProductsContent = new Dictionary<char, Delegate>
-        //{
-        //    {'U', new LoadWorkControlDelegate(RunProductUsed)},
-        //    {'N', new LoadWorkControlDelegate(RunProductNew)},
-        //};
         }
 
-        //private delegate void LoadWorkControlDelegate(clsAllProducts prProduct);
-
-        //private Dictionary<char, Delegate> _ProductsContent;
-        //private void dispatchProductsContent(clsAllProducts prProduct)
-        //{
-        //    _ProductsContent[prProduct.NewOrUsed].DynamicInvoke(prProduct);
-        //    updatePage();
-        //}
-
+        //populates text boxes with the product details
         private void updatePage()
         {
-
-
-            //tblProductTitle.Text = (prProduct.ProductName);
             tbProductCode.Text = (_Product.ProductCode);
             tbBrand.Text = (_Product.Brand);
             tbPrice.Text = (_Product.PricePerItem.ToString());
@@ -60,9 +31,9 @@ namespace Tech4Universal
 
             tbDescription.Text = (_Product.ItemDescription);
             RunNeworUsed();
-            //(ctcProdSpecs.Content as IProductControl).UpdateControl(_Product);
         }
 
+        //handles displaying a new or used product
         private void RunNeworUsed()
         {
             char New = 'N';
@@ -77,6 +48,7 @@ namespace Tech4Universal
             }
         }
 
+        //opens page for a used product
         private void RunProductUsed(clsAllProducts prProduct)
         {
 
@@ -86,7 +58,7 @@ namespace Tech4Universal
 
         }
 
-
+        //opens page for a new product
         private void RunProductNew(clsAllProducts prProduct)
         {
 
@@ -95,6 +67,7 @@ namespace Tech4Universal
 
         }
 
+        //retrieves product details from the DB
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             try
@@ -114,12 +87,16 @@ namespace Tech4Universal
                 tbMessageShow.Text = "Unable to populate page";
             }
         }
+        
+        //creates a random number for the order ID
         public int RandomNum ()
         {
             Random random = new Random();
-            return random.Next(1000);
+            return random.Next(1000000);
         
         }
+
+        //Creates order
         private void pushData()
         {
             _Order = new clsOrder();
@@ -136,7 +113,7 @@ namespace Tech4Universal
         }
 
         //--------------------------------- Processing an Order -------------------------------------
-
+        //updates the page to make sure stock has not changes
         private async void updateProductStock()
         {
             try
@@ -152,16 +129,15 @@ namespace Tech4Universal
 
         }
 
+        //handles the order, calls the updater and validOrder() to avoid order amount exceeding stock available and sends order to the DB
         private async void BtnOrder_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 pushData();
-                if (_Order.Quantity > 0 & _Order.CustomerDetails.Length > 5)
+                updateProductStock();
+                if (validOrder() == true)
                 {
-                    updateProductStock();
-                    if (_Order.Quantity <= _Product.QuantityInStock)
-                    {
                         _Product.QuantityInStock = (_Product.QuantityInStock - _Order.Quantity);
                         await ServiceClient.UpdateProductAsync(_Product);
                         try
@@ -173,21 +149,29 @@ namespace Tech4Universal
                             _Product.QuantityInStock = (_Product.QuantityInStock + _Order.Quantity);
                             await ServiceClient.UpdateProductAsync(_Product);
                         }
-                    }
-                    else
-                    {
-                        tbMessageShow.Text = "Please Make sure Order quantity is less than or equal to stock remaining";
-                    }
                 }
                 else
                 {
-                    tbMessageShow.Text = "Order Quantity must be Greater than one & an address must be entered";
+                    tbMessageShow.Text = "invalid order quantity or no address has been entered";
                 }
             }
             catch
             {
                 tbMessageShow.Text = ("Unable to order, please ensure order quantity is not above stock level");
                 updateProductStock();
+            }
+        }
+
+        //checks valid inputs have been made for the order
+        private bool validOrder()
+        {
+            if (_Order.Quantity > 0 && _Order.CustomerDetails.Length > 5 && _Order.Quantity <= _Product.QuantityInStock)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
