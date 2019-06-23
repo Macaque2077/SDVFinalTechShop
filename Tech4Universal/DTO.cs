@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 
@@ -31,8 +30,8 @@ namespace Tech4Universal
 
         public override string ToString()
         {
-            return ProductCode;
-        
+            return Brand + "\t" + ProductName + "\t" + PricePerItem;
+
 
         }
 

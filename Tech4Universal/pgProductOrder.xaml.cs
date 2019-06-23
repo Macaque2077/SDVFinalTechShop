@@ -24,6 +24,7 @@ namespace Tech4Universal
         //populates text boxes with the product details
         private void updatePage()
         {
+            tblProductTitle.Text = (_Product.ProductName);
             tbProductCode.Text = (_Product.ProductCode);
             tbBrand.Text = (_Product.Brand);
             tbPrice.Text = (_Product.PricePerItem.ToString());

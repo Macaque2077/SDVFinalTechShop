@@ -110,22 +110,15 @@ namespace TechShopWinForm
         //checks whether the text box values are valid returns a bool
         private bool inputValid()
         {
-            int lcNullCount = 0;
             bool lcValid = false;
 
             foreach (TextBox tb in this.Controls.OfType<TextBox>())
             {
                 if (string.IsNullOrWhiteSpace(tb.Text)  || string.IsNullOrEmpty(tb.Text))
                 {
-                    
-                    lcNullCount++;
-                    //NullCount is used as there was always one extra null text box, I am assuming because of the two inherited forms having their own extra textbox
-                    if (lcNullCount > 1)
-                    {
                         lcValid = false;
                         MessageBox.Show("Cannot enter whitespace or null for fields");
                         break;
-                    }
 
                 }
                 else

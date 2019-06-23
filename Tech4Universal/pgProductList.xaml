@@ -18,7 +18,7 @@ VerticalAlignment="Top" Width="825">
 TextWrapping="Wrap" Text="Messages" 
 VerticalAlignment="Top" Width="329" HorizontalAlignment="Stretch"/>
         </ScrollViewer>
-        <Button x:Name="btnSelect" Content="Select" HorizontalAlignment="Left" Margin="1649,250,0,0" VerticalAlignment="Top" Height="92" Width="227" FontSize="36"/>
+        <Button x:Name="btnSelect" Content="Select" HorizontalAlignment="Left" Margin="1649,250,0,0" VerticalAlignment="Top" Height="92" Width="227" FontSize="36" Click="btnSelect_Clicked"/>
         <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" Margin="1649,402,0,0" VerticalAlignment="Top" Height="92" Width="227" FontSize="36" Click="BtnClose_Click"/>
         <TextBox x:Name="tbDeviceTypeName" HorizontalAlignment="Left" Margin="370,114,0,0" Text="TextBox" VerticalAlignment="Top" Height="56" Width="370" FontSize="36" IsReadOnly="True"/>
 

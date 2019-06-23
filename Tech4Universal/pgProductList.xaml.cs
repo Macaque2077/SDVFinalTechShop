@@ -73,5 +73,11 @@ namespace Tech4Universal
         {
             Frame.GoBack();
         }
+
+        private void btnSelect_Clicked(object sender, RoutedEventArgs e)
+        {
+            if (lstbxProductList.SelectedItem != null)
+                Frame.Navigate(typeof(pgProduct), lstbxProductList.SelectedItem);
+        }
     }
 }
