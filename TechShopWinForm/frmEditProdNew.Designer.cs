@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblDesc = new System.Windows.Forms.Label();
-            this.tbConditionDesc = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbWarranty = new System.Windows.Forms.TextBox();
@@ -43,14 +42,6 @@
             this.lblDesc.Size = new System.Drawing.Size(60, 13);
             this.lblDesc.TabIndex = 5;
             this.lblDesc.Text = "Description";
-            // 
-            // tbConditionDesc
-            // 
-            this.tbConditionDesc.Location = new System.Drawing.Point(12, 237);
-            this.tbConditionDesc.Multiline = true;
-            this.tbConditionDesc.Name = "tbConditionDesc";
-            this.tbConditionDesc.Size = new System.Drawing.Size(323, 64);
-            this.tbConditionDesc.TabIndex = 11;
             // 
             // btnSubmit
             // 
@@ -84,10 +75,8 @@
             this.ClientSize = new System.Drawing.Size(350, 313);
             this.Controls.Add(this.tbWarranty);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbConditionDesc);
             this.Name = "frmProductNew";
             this.Text = "New Product Form";
-            this.Controls.SetChildIndex(this.tbConditionDesc, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.tbWarranty, 0);
             this.ResumeLayout(false);
@@ -97,7 +86,6 @@
 
         #endregion
         private System.Windows.Forms.Label lblDesc;
-        private System.Windows.Forms.TextBox tbConditionDesc;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbWarranty;

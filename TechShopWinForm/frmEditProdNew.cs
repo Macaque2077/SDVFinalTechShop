@@ -20,6 +20,7 @@ namespace TechShopWinForm
         {
             base.updateForm();
             tbWarranty.Text = _Products.Warranty.ToString();
+            
         }
 
         protected override void pushData()
